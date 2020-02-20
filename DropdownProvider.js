@@ -10,17 +10,18 @@ export default class DropdownProvider extends React.Component {
   }
 
   getContext = () => ({
-    dropdown: (title, text, type = 'custom') => {
+    dropdown: (title, text, options = {}) => {
       this._ref.current !== null &&
-        this._ref.current.alertWithType(type, title, text);
+        this._ref.current.dropdown(title, text, options);
     },
   });
 
   render() {
     return (
       <Provider value={this.getContext()}>
-        {React.Children.only(this.props.children)}
-        <DropdownAlert ref={this._ref} />
+        <Dropdown ref={this._ref} defaultOptions={this.props.defaultOptions}>
+          {React.Children.only(this.props.children)}
+        </Dropdown>
       </Provider>
     );
   }
