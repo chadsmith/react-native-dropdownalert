@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import DropdownAlert from './DropdownAlert';
+import Dropdown from './Dropdown';
 import {Provider} from './context';
 
 export default class DropdownProvider extends React.Component {

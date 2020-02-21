@@ -11,7 +11,7 @@ export default class Dropdown extends React.Component {
   dropdown = (title, text, options) => {
     if(options) {
       this.setState(options, () =>
-        this.ref.current.alertWithType(options.type || 'custom', title, text);
+        this.ref.current.alertWithType(options.type || 'custom', title, text)
       );
     }
     else {
